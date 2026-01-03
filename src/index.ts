@@ -50,6 +50,11 @@ class Inventory <T> {
   getAll() {
     return this.items
   }
+
+  getProperty <T, K extends keyof T> (item: T, key: K) {
+    const value = item[key]
+    return value
+  }
 }
 
 // Example items
@@ -72,10 +77,14 @@ inventory.add(bootsOfWisdom)
 inventory.add(helmetOfSpeed)
 
 // Display all item info
-
+const items = inventory.getAll()
+for (const item of items) {
+  item.displayInfo()
+}
 
 // Compare power levels
-
+const higher = comparePower(bootsOfWisdom, helmetOfSpeed)
+console.log('higher:', higher)
 
 // Access property using keyof
-
+const isRare = inventory.getProperty(bootsOfWisdom, 'type')
