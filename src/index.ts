@@ -28,7 +28,12 @@ class MagicalItem implements IMagicalItem {
 
 
 // Function to compare power levels of two items
-
+function comparePower(item1: MagicalItem, item2: MagicalItem) {
+  if (item1.powerLevel > item2.powerLevel) {
+    return item1.name
+  }
+  return item2.name
+}
 
 // Generic class for inventory
 
