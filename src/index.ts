@@ -53,9 +53,23 @@ class Inventory <T> {
 }
 
 // Example items
-
+const bootsOfWisdom = new MagicalItem(
+  'Boots of Wisdom',
+  'armor',
+  9001,
+  false
+)
+const helmetOfSpeed = new MagicalItem(
+  'Helmet of Speed',
+  'armor',
+  9005,
+  true
+)
 
 // Create inventory and add items
+const inventory = new Inventory<MagicalItem>()
+inventory.add(bootsOfWisdom)
+inventory.add(helmetOfSpeed)
 
 // Display all item info
 
