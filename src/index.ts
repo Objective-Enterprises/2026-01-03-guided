@@ -7,6 +7,24 @@ interface IMagicalItem {
 }
 
 // 2. Class implementing IMagicalItem
+class MagicalItem implements IMagicalItem {
+  name: string
+  type: string
+  powerLevel: number
+  isRare: boolean
+
+  constructor (name: string, type: string, powerLevel: number, isRare: boolean) {
+    this.name = name
+    this.type = type
+    this.powerLevel = powerLevel
+    this.isRare = isRare
+  }
+
+  displayInfo () {
+    const message = `${this.name} is a ${this.isRare ? 'rare' : 'common'} ${this.type} with ${this.powerLevel} power`
+    console.log(message)
+  }
+}
 
 
 // Function to compare power levels of two items
