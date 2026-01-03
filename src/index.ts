@@ -36,7 +36,21 @@ function comparePower(item1: MagicalItem, item2: MagicalItem) {
 }
 
 // Generic class for inventory
+class Inventory <T> {
+  private items: T[]
 
+  constructor () {
+    this.items = []
+  }
+
+  add (item: T) {
+    this.items.push(item)
+  }
+
+  getAll() {
+    return this.items
+  }
+}
 
 // Example items
 
